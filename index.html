@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Intensive Training</title>
+
+  <style>
+    /* ---------- CONFIGURAÇÃO GLOBAL ---------- */
+    body {
+      margin: 0;
+      font-family: "Times New Roman", serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* IMAGEM DE FUNDO */
+      background: 
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+        url("background-login.jpg") center/cover no-repeat;
+    }
+
+    /* ---------- CAIXA DE LOGIN ---------- */
+    .login-box {
+      background: rgba(255, 255, 255, 0.90);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 350px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      font-family: "Times New Roman", serif;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-family: "Times New Roman", serif;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 6px;
+      border: 1px solid #777;
+      font-size: 16px;
+      font-family: "Times New Roman", serif;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #304fc4;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: "Times New Roman", serif;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #223da3;
+    }
+
+    .error {
+      margin-top: 12px;
+      color: darkred;
+      font-size: 15px;
+      display: none;
+      font-family: "Times New Roman", serif;
+    }
+  </style>
+
+  <script src="students.js"></script>
+
+  <script>
+    function login() {
+      const pwd = document.getElementById("pwd").value.trim();
+
+      if (!pwd) return;
+
+      if (allowedPasswords.includes(pwd)) {
+        localStorage.setItem("authenticated", "yes");
+        window.location.href = "home.html";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <div class="login-box">
+    <h2>Bem-vindo!</h2>
+    <p>Insira sua senha para acessar o conteúdo.</p>
+
+    <input type="password" id="pwd" placeholder="Senha" />
+    <button onclick="login()">Entrar</button>
+
+    <div class="error" id="error">Senha inválida.</div>
+  </div>
+
+</body>
+</html>

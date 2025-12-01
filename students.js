@@ -1,0 +1,22 @@
+const allowedPasswords = [
+  "oak12",
+  "blue93",
+  "sunny08",
+  "river51",
+  "moon37",
+  "leaf29",
+  "stone44",
+  "wind73",
+  "star66",
+  "hill58",
+  "sand20",
+  "tree91",
+  "wave34",
+  "bird17",
+  "sky88",
+  "seed03",
+  "path42",
+  "rain57",
+  "fog26",
+  "cloud19"
+];
